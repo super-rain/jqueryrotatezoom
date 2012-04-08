@@ -111,7 +111,7 @@ Wilq32.PhotoEffect.prototype={
 		this._parameters.easing = parameters.easing || this._parameters.easing || function (x, t, b, c, d) { return -c * ((t=t/d-1)*t*t*t - 1) + b; }
 		this._parameters.duration = parameters.duration || this._parameters.duration || 1000;
 		// zoom related parameters
-		this._parameters.zoom = parameters.zoom || this._parameters.zoom || true;  //by default zoom is enabled now
+		this._parameters.dontZoom = parameters.dontZoom || this._parameters.dontZoom || false;  //by default zoom is enabled now
 		this._parameters.limitWidthPercent = parameters.limitWidthPercent || this._parameters.limitWidthPercent || 100; //used to limit the zoom percentage
 		// zoom related parameters end here.....
         this._parameters.callback = parameters.callback || this._parameters.callback || function(){};
@@ -227,7 +227,7 @@ Wilq32.PhotoEffect.prototype={
 		}
 		this._animateStartTime = +new Date;
 		this._animateStartAngle = this._angle;
-		if(this._parameters.zoom){ //all this has to be done only if zoom is enabled
+		if(this._parameters.dontZoom===false){ //all this has to be done only if zoom is enabled
 			// get the natural width of the image provided, this will be used to calculates the number of pixels which will be added/subtracted in/from the image width everytime to zoom in/out
 			// see we are changing the natural width permanently in the scope of this script with the limitWidthPercent, which limits the size of zoom
 			this._naturalWidth = parseInt(parseInt(this._img.naturalWidth)*(this._parameters.limitWidthPercent/100)); //my code
@@ -240,8 +240,8 @@ Wilq32.PhotoEffect.prototype={
     {
          var actualTime = +new Date;
          var checkEnd = actualTime - this._animateStartTime > this._parameters.duration;
-		 var zoom = this._parameters.zoom;
-		if(zoom){//all this has to be done only if zoom is enabled
+		 var dontZoom = this._parameters.dontZoom;
+		if(dontZoom===false){//all this has to be done only if zoom is enabled
 			 var naturalWidth = this._naturalWidth;
 			 var incrementPxs = this._incrementPxs;
 		 }
@@ -255,7 +255,7 @@ Wilq32.PhotoEffect.prototype={
              if (this._canvas||this._vimage||this._img) {
                  var angle = this._parameters.easing(0, actualTime - this._animateStartTime, this._animateStartAngle, this._parameters.animateTo - this._animateStartAngle, this._parameters.duration);
                  this._rotate((~~(angle*10))/10);
-				 if(zoom){//all this has to be done only if zoom is enabled
+				 if(dontZoom===false){//all this has to be done only if zoom is enabled
 					if(Math.ceil(angle) + 1  < this._parameters.animateTo){		//check whether zooming in
 						jQuery(this._img).css({ width: function(key, value){  	// use the jquery css funcion with a call back function to zoom in
 							return (parseInt(value)+1 < naturalWidth)? parseInt(value)+incrementPxs : value ;
