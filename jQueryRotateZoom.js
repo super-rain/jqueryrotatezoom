@@ -111,7 +111,7 @@ Wilq32.PhotoEffect.prototype={
 		this._parameters.easing = parameters.easing || this._parameters.easing || function (x, t, b, c, d) { return -c * ((t=t/d-1)*t*t*t - 1) + b; }
 		this._parameters.duration = parameters.duration || this._parameters.duration || 1000;
 		// zoom related parameters
-		this._parameters.zoom = parameters.zoom || this._parameters.zoom || false;  //by default zoom is disabled
+		this._parameters.zoom = parameters.zoom || this._parameters.zoom || true;  //by default zoom is enabled now
 		this._parameters.limitWidthPercent = parameters.limitWidthPercent || this._parameters.limitWidthPercent || 100; //used to limit the zoom percentage
 		// zoom related parameters end here.....
         this._parameters.callback = parameters.callback || this._parameters.callback || function(){};
