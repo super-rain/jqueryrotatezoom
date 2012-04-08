@@ -8,7 +8,6 @@ _Check the *JsFiddle* example_
   # http://jsfiddle.net/sandeeprajoria/jGyBZ/3/ contains full fledged working examples
   # http://jsfiddle.net/sandeeprajoria/jGyBZ/1/ contains the most basic implementation
 The above links are full working examples of all major features of the plugin used in it.
-==Click on the ==
 
 ----
 
