@@ -7,4 +7,45 @@ Contains live examples for the implementation if jQueryRotateZoom plugin. For no
 _Check the *JsFiddle* example_
   # http://jsfiddle.net/sandeeprajoria/jGyBZ/2/ contains full fledged working examples
   # http://jsfiddle.net/sandeeprajoria/jGyBZ/1/ contains the most basic implementation
-These are full working examples of all major features of the plugin used in it.
+The above links are full working examples of all major features of the plugin used in it.
+
+----
+
+Below are some code snippets which will give a better idea on how to go about initiating with the plugin
+
+----
+
+{{{
+$("img").rotate({
+    angle:0, 
+    animateTo:360,
+    limitWidthPercent:80,
+    duration: 500,
+    easing: $.easing.swing,
+});
+}}}
+
+The above code will do the following things:
+  * Rotate the img element from 0 to 360degrees clockwise.
+  * Will not zoom the image to its 100 percent but will stop after zooming to 80%.
+  * Will take 500 milliseconds to do so.
+  * Will use the *swing* easing provided that we include the jQuery UI for easings.
+
+*However*
+----
+{{{
+$("img").rotate({
+    angle:0, 
+    dontZoom:True;
+    animateTo:720,
+    limitWidthPercent:80,
+    duration: 500,
+    easing: $.easing.swing,
+});
+}}}
+
+will do the following things:
+  * Neglect the *limitWidthPercent* as the zoom feature is disabled now
+  * Rotate the img element from 0 to 720degrees clockwise. i.e 2 full circles
+  * Will take 500 milliseconds to do so.
+  * Will use the *swing* easing provided that we include the jQuery UI for easings.
