@@ -5,5 +5,6 @@ Contains live examples for the implementation if jQueryRotateZoom plugin. For no
 
 
 _Check the *JsFiddle* example_
-http://jsfiddle.net/sandeeprajoria/jGyBZ/2/
-This is a full working example of all major features of the plugin used in it.
+  # http://jsfiddle.net/sandeeprajoria/jGyBZ/2/ contains full fledged working examples
+  # http://jsfiddle.net/sandeeprajoria/jGyBZ/1/ contains the most basic implementation
+These are full working examples of all major features of the plugin used in it.
