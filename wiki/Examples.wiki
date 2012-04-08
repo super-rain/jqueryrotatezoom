@@ -1,0 +1,8 @@
+#summary Zoom in/out of images while rotating them.
+
+= Introduction =
+=Contains live examples for the implementation if jQueryRotateZoom plugin. For now here are a few jsFiddle projects for your reference=
+
+
+_Check the *JsFiddle* example_
+http://jsfiddle.net/sandeeprajoria/jGyBZ/
