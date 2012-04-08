@@ -1,12 +1,14 @@
-// VERSION: 2.2 LAST UPDATE: 13.03.2012
+// VERSION: 1.1 LAST UPDATE: 8.04.2012
 /* 
  * Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
  * 
- * Made by Wilq32, wilq32@gmail.com, Wroclaw, Poland, 01.2009
+ * Original plugin Made by Wilq32, wilq32@gmail.com, Wroclaw, Poland, 01.2009
  * Website: http://code.google.com/p/jqueryrotate/ 
+ *
+ * Extended by Sandeep Rajoria, sandeep.rajoria@gmail.com, Ahmedabad, India, 04.2012
+ * Website: http://code.google.com/p/jqueryrotatezoom/ 
  */
 
-// Documentation removed from script file (was kinda useless and outdated)
 
 (function($) {
 var supportedCSS,styles=document.getElementsByTagName("head")[0].style,toCheck="transformProperty WebkitTransform OTransform msTransform MozTransform".split(" ");
@@ -111,7 +113,7 @@ Wilq32.PhotoEffect.prototype={
 		this._parameters.easing = parameters.easing || this._parameters.easing || function (x, t, b, c, d) { return -c * ((t=t/d-1)*t*t*t - 1) + b; }
 		this._parameters.duration = parameters.duration || this._parameters.duration || 1000;
 		// zoom related parameters
-		this._parameters.dontZoom = parameters.dontZoom || this._parameters.dontZoom || false;  //by default zoom is enabled now
+		this._parameters.dontZoom = parameters.dontZoom || this._parameters.dontZoom || false;  //by default zoom is enabled 
 		this._parameters.limitWidthPercent = parameters.limitWidthPercent || this._parameters.limitWidthPercent || 100; //used to limit the zoom percentage
 		// zoom related parameters end here.....
         this._parameters.callback = parameters.callback || this._parameters.callback || function(){};
